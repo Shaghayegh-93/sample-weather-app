@@ -1,0 +1,73 @@
+body {
+  font-family: sans-serif;
+}
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+
+h1 {
+  margin: 0;
+  margin-top: 10px;
+  padding: 0;
+  font-weight: 100;
+}
+ul {
+  padding: 0;
+  margin: 0;
+}
+li {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+}
+small {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 15px;
+}
+.container {
+  max-width: 720px;
+  margin-top: 50px;
+}
+.weatherApp {
+  max-width: 600px;
+  padding: 20px;
+  border: 1px solid #aeabab;
+  border-radius: 30px;
+  color: #7c7c7c;
+}
+.topInfo {
+  font-size: 18px;
+}
+.bottomInfo {
+  margin-top: 20px;
+}
+
+.leftSide {
+  position: relative;
+}
+.leftSide i {
+  font-size: 50px;
+  color: lightblue;
+}
+.weatherIcon {
+  position: absolute;
+  top: -30px;
+  left: 70px;
+  color: #333;
+}
+.temp {
+  font-size: 64px;
+}
+.unit {
+  position: absolute;
+  top: 20px;
+  font-size: 20px;
+}
