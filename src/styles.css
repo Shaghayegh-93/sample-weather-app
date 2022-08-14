@@ -47,7 +47,7 @@ small {
   font-size: 18px;
 }
 .bottomInfo {
-  margin-top: 20px;
+  /* margin-top: 20px; */
 }
 
 .leftSide {
@@ -59,9 +59,13 @@ small {
 }
 .weatherIcon {
   position: absolute;
-  top: -30px;
-  left: 70px;
+  top: 0px;
+  left: 100px;
   color: #333;
+}
+#icon {
+  margin-right: 20px;
+  top: -10px;
 }
 .temp {
   font-size: 64px;
@@ -70,4 +74,12 @@ small {
   position: absolute;
   top: 20px;
   font-size: 20px;
+}
+.detail-info {
+  margin-top: 25px;
+}
+
+.unit .active {
+  color: #333;
+  cursor: default;
 }
