@@ -24,7 +24,7 @@
         <div class="weatherApp">
           <form class="search-form" id="search-form">
             <div class="row">
-              <div class="col-6">
+              <div class="col-9">
                 <input
                   type="text"
                   placeholder="Type a city.."
@@ -41,7 +41,7 @@
                   class="form-control btn btn-primary shadow-sm"
                 />
               </div>
-              <div class="col-3" id="locationButton">
+              <!-- <div class="col-3" id="locationButton">
                 <button
                   type="submit"
                   value="Search"
@@ -50,23 +50,23 @@
                 >
                   <i class="fa-solid fa-location-crosshairs"></i>
                 </button>
-              </div>
+              </div> -->
             </div>
           </form>
-          <h1 id="city">Manchester,Uk</h1>
+          <h1 id="city"></h1>
           <ul class="topInfo">
-            <li id="current-time">Saturday 17:00</li>
+            <li id="current-time"></li>
             <li id="weatherShape"></li>
           </ul>
           <div class="row bottomInfo">
             <div class="col-6 leftSide">
               <i class="fa-solid fa-cloud-showers-heavy"></i>
               <div class="weatherIcon">
-                <span id="temp" class="temp">19</span>
-                <!-- <span class="unit"
+                <span id="temp" class="temp"></span>
+                <span class="unit"
                   ><a href="#" id="celsius">°C</a
                   ><a href="#" id="fahrenheit">|F</a>
-                </span> -->
+                </span>
               </div>
             </div>
             <div class="col-6">
@@ -81,7 +81,9 @@
       </div>
     </div>
     <small>
-        <a href="https://github.com/Shaghayegh-93/sample-weather-app">Open-source-code</a>,by Shaghayegh
+      <a href="https://github.com/Shaghayegh-93/sample-weather-app"
+        >Open-source-code</a
+      >,by Shaghayegh
     </small>
 
     <script src="src/index.js"></script>
