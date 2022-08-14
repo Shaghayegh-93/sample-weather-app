@@ -45,14 +45,47 @@ function showTemp(response) {
   let temp = document.querySelector("#temp");
   let h1 = document.querySelector("h1");
   let dateElement = document.querySelector("#current-time");
+  let icon = document.querySelector("#icon");
   h1.innerHTML = response.data.name;
+  celsius = response.data.main.temp;
   temp.innerHTML = temprature;
   humiduty.innerHTML = `Humidity:${response.data.main.humidity}%`;
   wind.innerHTML = `Wind:${windSpeed}km/h`;
   weatherShape.innerHTML = response.data.weather[0].description;
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
-  console.log(response.data);
+  icon.setAttribute(
+    "src",
+    ` http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  icon.setAttribute(
+    "alt",
+    ` http://openweathermap.org/img/wn/${response.data.weather[0].description}@2x.png`
+  );
 }
+function displayFarenheit(e) {
+  e.preventDefault();
+  let temp = document.querySelector("#temp");
+  celsiusTemp.classList.remove("active");
+  farenheit.classList.add("active");
+  let farenheitTemp = (celsius * 9) / 5 + 32;
+  console.log(celsius);
+  temp.innerHTML = Math.round(farenheitTemp);
+}
+function displayCelsius(e) {
+  e.preventDefault();
+  celsiusTemp.classList.add("active");
+  farenheit.classList.remove("active");
+  let temp = document.querySelector("#temp");
+  console.log(celsius);
+  temp.innerHTML = Math.round(celsius);
+}
+let celsius = null;
+let farenheit = document.querySelector("#fahrenheit");
+farenheit.addEventListener("click", displayFarenheit);
+let celsiusTemp = document.querySelector("#celsius");
+celsiusTemp.addEventListener("click", displayCelsius);
+searchCity("manchester");
+
 // function getTempData() {
 //   navigator.geolocation.getCurrentPosition(showLocation);
 // }
