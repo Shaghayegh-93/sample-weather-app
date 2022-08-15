@@ -135,20 +135,21 @@ function displaydaysForcast(response) {
   forcastDaysElement.innerHTML = forcastHtml;
 }
 
+
+function getTempData() {
+  navigator.geolocation.getCurrentPosition(showLocation);
+}
+let locationButton = document.querySelector("#location");
+locationButton.addEventListener("click", getTempData);
+
+function showLocation(position) {
+  let apikey = "4d5e328b4891754448ad2069cf8198c2";
+
+
+  let lat = position.coords.latitude;
+  let lon = position.coords.longitude;
+  let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apikey}`;
+  axios.get(url).then(showTemp);
+}
+
 searchCity("manchester");
-
-// function getTempData() {
-//   navigator.geolocation.getCurrentPosition(showLocation);
-// }
-// let locationButton = document.querySelector("#location");
-// locationButton.addEventListener("click", getTempData);
-
-// function showLocation(position) {
-//   let apikey = "4d5e328b4891754448ad2069cf8198c2";
-//   console.log(position);
-
-//   let lat = position.coords.latitude;
-//   let lon = position.coords.longitude;
-//   let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apikey}`;
-//   axios.get(url).then(showTemp);
-// }
