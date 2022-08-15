@@ -84,7 +84,31 @@ let farenheit = document.querySelector("#fahrenheit");
 farenheit.addEventListener("click", displayFarenheit);
 let celsiusTemp = document.querySelector("#celsius");
 celsiusTemp.addEventListener("click", displayCelsius);
+
+function displaydaysForcast() {
+  let forcastDaysElement = document.querySelector("#forcastDays");
+  let forcastHtml = `<div class="row">`;
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri"];
+  days.forEach(function (day) {
+    forcastHtml =
+      forcastHtml +
+      `
+    <div class="col-2">
+    <div class="weatherForcastDate">${day}</div>
+    <img   src="http://openweathermap.org/img/wn/50d@2x.png"
+    width="42"/>
+    <div class="weatherForcastTemperture">
+    <span class="weatherForcastMaxTemperture" >22° </span>
+    <span class="weatherForcastMinTemperture" >18° </span>
+    </div>
+    </div>
+    `;
+  });
+  forcastHtml = forcastHtml + `<div/>`;
+  forcastDaysElement.innerHTML = forcastHtml;
+}
 searchCity("manchester");
+displaydaysForcast();
 
 // function getTempData() {
 //   navigator.geolocation.getCurrentPosition(showLocation);
