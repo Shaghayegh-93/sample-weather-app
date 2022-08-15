@@ -55,7 +55,7 @@ small {
 }
 .leftSide i {
   font-size: 50px;
-  color: lightblue;
+  
 }
 .weatherIcon {
   position: absolute;
@@ -82,4 +82,19 @@ small {
 .unit .active {
   color: #333;
   cursor: default;
+}
+.forcastDays {
+  color: #000;
+  margin-top: 20px;
+  text-align: center;
+  font-size: 16px;
+}
+.weatherForcastDate {
+  opacity: 0.5;
+}
+.weatherForcastTemperture {
+  font-size: 13px;
+}
+.weatherForcastMinTemperture {
+  opacity: 0.5;
 }
