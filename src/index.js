@@ -35,6 +35,11 @@ function searchCity(city) {
   let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}&units=metric`;
   axios.get(url).then(showTemp);
 }
+function getForcastDate(coordinate) {
+  let apikey = "4d5e328b4891754448ad2069cf8198c2";
+  let url = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinate.lat}&lon=${coordinate.lon}&appid=${apikey}&units=metric`;
+  axios.get(url).then(displaydaysForcast);
+}
 
 function showTemp(response) {
   let temprature = Math.round(response.data.main.temp);
@@ -61,6 +66,7 @@ function showTemp(response) {
     "alt",
     ` http://openweathermap.org/img/wn/${response.data.weather[0].description}@2x.png`
   );
+  getForcastDate(response.data.coord);
 }
 function displayFarenheit(e) {
   e.preventDefault();
@@ -85,7 +91,7 @@ farenheit.addEventListener("click", displayFarenheit);
 let celsiusTemp = document.querySelector("#celsius");
 celsiusTemp.addEventListener("click", displayCelsius);
 
-function displaydaysForcast() {
+function displaydaysForcast(response) {
   let forcastDaysElement = document.querySelector("#forcastDays");
   let forcastHtml = `<div class="row">`;
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri"];
@@ -107,8 +113,8 @@ function displaydaysForcast() {
   forcastHtml = forcastHtml + `<div/>`;
   forcastDaysElement.innerHTML = forcastHtml;
 }
+
 searchCity("manchester");
-displaydaysForcast();
 
 // function getTempData() {
 //   navigator.geolocation.getCurrentPosition(showLocation);
