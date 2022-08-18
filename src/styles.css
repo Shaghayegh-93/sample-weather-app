@@ -55,7 +55,6 @@ small {
 }
 .leftSide i {
   font-size: 50px;
-  
 }
 .weatherIcon {
   position: absolute;
@@ -79,10 +78,10 @@ small {
   margin-top: 25px;
 }
 
-.unit .active {
+/* .unit .active {
   color: #333;
   cursor: default;
-}
+} */
 .forcastDays {
   color: #000;
   margin-top: 20px;
